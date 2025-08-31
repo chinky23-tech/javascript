@@ -1,4 +1,6 @@
 const button = document.getElementById('colorBtn');
+const hexbutton = document.getElementById('hexColor');
+const resetbutton = document.getElementById('resetBtn');
 const h1 = document.querySelector('h1');
 function getRandomColor(){
     const letters = '0123456789ABCDEF';
@@ -20,4 +22,16 @@ document.body.style.backgroundColor = c;
 h1.textContent = `Current color: ${c}`;
 
 document.body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+
+});
+hexbutton.addEventListener('click', ()=>{
+const hexColor = getRandomColor();
+document.body.style.background = hexColor;
+h1.textContent = `Current color: ${hexColor}`;
+
+});
+
+resetbutton.addEventListener('click',() =>{
+document.body.style.background = '';
+h1.textContent = 'Current color: ';
 });
