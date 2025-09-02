@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade Effect</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        #demo {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        #demo.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-amber-700">
+    <p id="demo" class="text-amber-50 flex justify-center items-center p-8">Smile</p>
+    <div class="flex justify-center items-center gap-3">
+        <button id="show" class="p-1 px-3.5 border-2 border-amber-50 rounded-lg text-cyan-50">SHOW</button>
+        <button id="hide" class="p-1 px-3.5 border-2 border-amber-50 rounded-lg text-cyan-50">HIDE</button>
+    </div>
+    <script>
+        const demo = document.getElementById('demo');
+        const show = document.getElementById('show');
+        const hide = document.getElementById('hide');
+
+        show.addEventListener('click', () => {
+            demo.classList.remove('hidden');
+        });
+
+        hide.addEventListener('click', () => {
+            demo.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
