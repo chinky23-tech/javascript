@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttons</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body class="flex justify-center items-center m-6">
+    <button id="btnColor" class="btn-color p-3 bg-cyan-600 shadow-lg shadow-cyan-500/50 rounded-lg text-white border hover:bg-cyan-300 cursor-pointer transition duration-500">Color change</button>
+
+    
+</body>
+<script>
+const btnColor = document.getElementById('btnColor');
+    let toggled = false; // track button state
+
+    btnColor.addEventListener('click', () => {
+        if (!toggled) {
+            // Change to red
+            btnColor.style.backgroundColor = 'red';
+            btnColor.style.boxShadow = '0 10px 20px -8px rgba(255,0,0,0.5)';
+            btnColor.textContent = 'clicked';
+        } else {
+            // Back to original
+            btnColor.style.backgroundColor = '';
+            btnColor.style.boxShadow = '';
+            btnColor.textContent = 'Color change';
+        }
+        toggled = !toggled; // flip state
+    });
+
+</script>
+</html>
