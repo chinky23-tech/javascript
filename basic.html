@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting Changer</title>
+  <link rel="stylesheet" href="./output.css">
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-300">
+  <h1 id="greeting" class="m-8 text-3xl text-green-800 font-bold">
+    Welcome to the Paradise
+  </h1>
+  <button id="greetBtn" class="bg-amber-800 text-amber-50 p-3 rounded-lg shadow-md hover:bg-amber-700 transition cursor-pointer">
+    Change greeting
+  </button>
+
+  <script>
+   // var -> get elements
+   const greeting = document.getElementById('greeting');
+   const greetBtn = document.getElementById('greetBtn');
+// function -> change the content
+   function changeGreeting(){
+    greeting.textContent = 'Have a nice day!';
+   
+   }
+   // Event -> Call function on button click
+   greetBtn.addEventListener('click', changeGreeting);
+  </script>
+</body>
+</html>

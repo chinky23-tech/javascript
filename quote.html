@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Random Quote Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .quote-card {
+      perspective: 1000px;
+    }
+    .card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flipped {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    /* Glassmorphism effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(200, 200, 200, 0.4);
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen 
+bg-gradient-to-r
+ from-pink-100 via-purple-100 to-blue-100">
+
+  <!-- Quote Card -->
+  <div class="quote-card w-96 h-64 relative transform hover:scale-105 
+  transition duration-500">
+    <div id="card" class="card-inner w-full h-full relative">
+      
+      <!-- Front -->
+      <div class="card-front absolute w-full h-full glass rounded-2xl
+       shadow-[0_0_25px_rgba(139,92,246,0.6)] 
+      flex flex-col items-center justify-center p-6">
+        <p id="quote" class="text-xl font-semibold text-gray-800 
+        text-center">Click the button for a quote</p>
+        <span id="author" class="mt-3 text-gray-600">- Author</span>
+      </div>
+      
+      <!-- Back -->
+      <div class="card-back absolute w-full h-full glass rounded-2xl 
+      shadow-[0_0_25px_rgba(236,72,153,0.6)]
+       flex flex-col items-center justify-center p-6 text-gray-800">
+        <p class="text-lg animate-pulse">✨ Loading new wisdom... ✨</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Button -->
+  <button id="newQuote" 
+    class="absolute bottom-10 bg-gradient-to-r from-purple-400 to-pink-400
+     text-white px-8 py-3 rounded-full shadow-lg animate-pulse 
+     hover:animate-none hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] 
+     transition duration-500">
+    New Quote
+  </button>
+
+  <script>
+    const quotes = [
+      { text: "The best way to get started is to quit talking and begin doing.", 
+      author: "Walt Disney" },
+      { text: "Don’t let yesterday take up too much of today.", 
+      author: "Will Rogers" },
+      { text: "It’s not whether you get knocked down, it’s whether you get up.", 
+      author: "Vince Lombardi" },
+      { text: "If you can dream it, you can do it.", 
+      author: "Walt Disney" },
+      { text: "Your time is limited, so don’t waste it living someone else’s life.", 
+      author: "Steve Jobs" },
+      { text: "Code is like humor. When you have to explain it, it’s bad.", 
+      author: "Cory House" },
+      { text: "First, solve the problem. Then, write the code.", 
+      author: "John Johnson" }
+    ];
+
+    const card = document.getElementById('card');
+    const quoteEl = document.getElementById('quote');
+    const authorEl = document.getElementById('author');
+    const newQuoteBtn = document.getElementById('newQuote');
+
+    newQuoteBtn.addEventListener('click', () => {
+      // Flip animation
+      card.classList.add('flipped');
+
+      setTimeout(() => {
+        // Pick random quote
+        const random = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteEl.textContent = random.text;
+        authorEl.textContent = "- " + random.author;
+
+        // Flip back
+        card.classList.remove('flipped');
+      }, 600); // match transition duration
+    });
+  </script>
+</body>
+</html>

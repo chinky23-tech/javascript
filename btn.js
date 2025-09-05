@@ -25,13 +25,14 @@ const btnColor = document.getElementById('btnColor');
     const btnTwo = document.getElementById('btnTwo');
     btnTwo.addEventListener('click', () =>{
         if(toggled){
-        btnTwo.style.borderRadius = '10px';
-        btnTwo.style.cursor = 'pointer';
-        btnTwo.style.padding = '20px';
+    btnTwo.classList.toggle('px-10');
+    btnTwo.classList.toggle('py-6');
+    btnTwo.classList.toggle('text-xl');
+    btnTwo.classList.toggle('cursor-pointer');
+    btnTwo.classList.toggle('rounded-full');
+    btnTwo.classList.toggle('ease-0.5s-all');
         }else{
-            btnTwo.style.borderRadius = '';
-            btnTwo.style.cursor = '';
-            btnTwo.style.padding = '';
+            btnTwo.classList.remove('px-10', 'py-6', 'text-xl', 'cursor-pointer', 'rounded-full', 'ease-0.5s-all');
         }
-        toggled = !toggled;
+       toggled  = !toggled;
     });
