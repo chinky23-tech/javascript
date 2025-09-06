@@ -6,20 +6,23 @@
     <title>Text Replacer</title>
     <link rel="stylesheet" href="./output.css">
 </head>
-<body class="flex flex-col justify-center items-center bg-amber-900 min-h-screen">
+<body class="flex flex-col justify-center items-center bg-gray-400 min-h-screen">
     
-   
-    <h1 id="count" class="text-5xl font-bold mb-6">0</h1>
-    <button id="increaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer">
+     <div class=" text-center space-x-4 p-8 bg-amber-400 rounded-lg shadow-lg shadow-amber-600 g">
+    <h1 id="count" class="text-5xl font-bold mb-6 m-auto">0</h1>
+  
+    <button id="increaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer hover:bg-yellow-600 transition">
         increase
     </button>
-    <button id="decreaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer"> Decrease</button>
-
-    <script>
+    <button id="decreaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer hover:bg-yellow-600 transition"> Decrease</button>
+<button id="resetBtn" class="bg-amber-700 text-white px-6 py-3 rounded-lg text-xl cursor-pointer hover:bg-amber-950 transition">Reset</button>
+   </div>
+   <script>
         let counter = 0;
         const countDisplay = document.getElementById('count');
         const increaseBtn = document.getElementById('increaseBtn');
         const decreaseBtn = document.getElementById('decreaseBtn');
+        const resetBtn = document.getElementById('resetBtn');
 
         function increaseNum () {
             counter = counter + 1;
@@ -34,7 +37,11 @@
             countDisplay.textContent = counter;
         }
        decreaseBtn.addEventListener('click', decreaseNum);
-
+function resetNum(){
+    counter = 0;
+    countDisplay.textContent = counter;
+}
+resetBtn.addEventListener('click',resetNum);
     </script>
 </body>
 </html>
