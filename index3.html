@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Adjuster</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+    <body id="backColor" class="bg-gradient-to-tl from-cyan-100 to-cyan-700  flex justify-center items-center min-h-screen">
+  <!-- Card -->
+  <div id="cardColor" class="bg-white max-w-md w-full rounded-2xl shadow-xl overflow-hidden py-8 px-6 text-center">
+    
+    <!-- Heading -->
+    <h1 class="font-bold  mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-3xl">Font Size Adjuster</h1>
+    <p id="fontChange" class="font-bold mb-6 text-2xl bg-gradient-to-br from-blue-400 via-cyan-700 to-pink-400 inline-block text-transparent bg-clip-text">Knowledge is Power</p>
+    
+    <!-- Buttons -->
+    <div class="flex justify-center space-x-4">
+      <button id="fontChanger" 
+        class="bg-cyan-800 text-white px-5 py-2 rounded-lg shadow-md hover:bg-cyan-600 transition text-xl cursor-pointer shadow-cyan-100">
+        Font Adjuster
+      </button>
+      <script>
+        const fontChange = document.getElementById('fontChange');
+        const fontChanger = document.getElementById('fontChanger');
+
+        function fontAdjust(){
+            fontChange.classList.toggle('text-4xl');
+        }
+        fontChanger.addEventListener('click' , fontAdjust);
+      </script>
+</body>
+</html>
