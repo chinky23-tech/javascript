@@ -13,18 +13,28 @@
     <button id="increaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer">
         increase
     </button>
+    <button id="decreaseBtn" class="bg-amber-200 text-black px-6 py-3 rounded-lg text-xl cursor-pointer"> Decrease</button>
 
     <script>
         let counter = 0;
         const countDisplay = document.getElementById('count');
         const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
 
         function increaseNum () {
             counter = counter + 1;
+       
             countDisplay.textContent = counter;
         }
 
         increaseBtn.addEventListener('click',  increaseNum);
+
+        function decreaseNum(){
+            counter = counter - 1;
+            countDisplay.textContent = counter;
+        }
+       decreaseBtn.addEventListener('click', decreaseNum);
+
     </script>
 </body>
 </html>
