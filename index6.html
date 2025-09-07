@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Replacer</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-fuchsia-50">
+    <div id="textReplacer" class="max-w-md w-full bg-fuchsia-400 rounded-2xl shadow-lg overflow-hidden p-6 text-center flex flex-col justify-center items-center space-y-6">
+        <h1 id="count" class="text-white text-3xl">0</h1>
+        <p class="text-white text-bold text-2xl" >Code. Create. Conquer</p>
+        <div class="flex  space-x-4 justify-center gap-6">
+        <button id="increaseBtn" class="px-6 py-3 bg-fuchsia-700 text-white rounded-lg shadow hover:bg-green-500 transition cursor-pointer">
+            Increase
+        </button>
+        <button id="decreaseBtn" class="px-6 py-3 bg-fuchsia-900 text-white rounded-lg shadow hover:bg-green-500 transition cursor-pointer">
+            Decrease
+        </button>
+        <button id="resetBtn" class="px-6 py-3 bg-fuchsia-700 text-white rounded-lg shadow hover:bg-green-500 transition cursor-pointer">Reset</button>
+    </div>
+    </div>
+    
+    <script>
+        let counter = 0;
+        const countDisplay = document.getElementById('count');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        function addBtn() {
+            counter++;   // ✅ increase counter
+            countDisplay.textContent = counter; // ✅ update display
+        }
+
+        function subtractBtn() {
+            counter--;   // ✅ decrease counter
+            countDisplay.textContent = counter;
+        }
+function resetNum(){
+    counter = 0;
+   countDisplay.textContent = counter;
+}
+        increaseBtn.addEventListener('click', addBtn);
+        decreaseBtn.addEventListener('click', subtractBtn);
+        resetBtn.addEventListener('click',resetNum);
+    </script>
+</body>
+</html>
