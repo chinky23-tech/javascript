@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Switcher</title>
+  <link rel="stylesheet" href="./output.css">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div id="imageCard" class="max-w-md w-full bg-sky-500 rounded-2xl shadow-lg overflow-hidden p-6 text-center flex flex-col justify-center items-center space-y-6">
+      <!-- Image -->
+      <img src="images//pasta-variation.jpg" id="imageOne" alt="mac & cheese" class="rounded-lg shadow-md max-h-72 object-cover">
+
+      <!-- Button inside card -->
+      <button id="imageChange" class="px-6 py-3 bg-blue-800 text-white rounded-lg shadow hover:bg-blue-600 transition">
+        Click Me
+      </button>
+  </div>
+
+  <script>
+      const imageOne = document.getElementById('imageOne');
+      const imageChange = document.getElementById('imageChange');
+
+      function imageSwitcher(){
+          imageOne.src = "images//mac & cheese.webp"; 
+      }
+
+      imageChange.addEventListener('click', imageSwitcher);
+  </script>
+</body>
+</html>
